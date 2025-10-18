@@ -1,0 +1,33 @@
+.accordion details {
+  border: 1px solid var(--surface-alt);
+  border-radius: var(--radius-md);
+  margin-bottom: 0.75rem;
+  background: var(--surface);
+  overflow: hidden;
+}
+.accordion summary {
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  list-style: none;
+}
+.accordion summary::-webkit-details-marker {
+  display: none;
+}
+.accordion details[open] summary {
+  background: var(--surface-alt);
+}
+.accordion .panel {
+  padding: 0 1rem 1rem;
+  animation: fade 0.35s ease;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

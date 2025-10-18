@@ -1,0 +1,123 @@
+:root {
+  --bg: #0f1115;
+  --surface: #1c2025;
+  --surface-alt: #252a31;
+  --text: #f5f7fa;
+  --text-dim: #c2c8d1;
+  --accent: #5b8bf7;
+  --accent-alt: #dd7af4;
+  --danger: #e5484d;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --font-stack: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  color-scheme: dark;
+}
+body {
+  margin: 0;
+  font-family: var(--font-stack);
+  background: linear-gradient(120deg, #0f1115, #161b22 60%, #1e2530);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+p {
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+code {
+  font-family: Consolas, 'Courier New', monospace;
+  background: var(--surface);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85em;
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: rgba(28, 32, 37, 0.85);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--surface-alt);
+}
+.logo {
+  margin: 0;
+  font-size: 1.3rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.primary-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+}
+.primary-nav a {
+  display: block;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+.primary-nav a.active {
+  background: var(--accent);
+  color: #fff;
+}
+.primary-nav a:hover {
+  background: var(--surface-alt);
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+main.page,
+.home {
+  padding: 1.5rem;
+}
+
+/* Utility */
+.home p {
+  max-width: 70ch;
+}
+.page h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 700px) {
+  .primary-nav ul {
+    flex-wrap: wrap;
+  }
+  .carousel .slide {
+    flex-basis: 90%;
+  }
+}

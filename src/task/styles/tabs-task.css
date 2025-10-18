@@ -1,0 +1,11 @@
+/* Starter CSS for Tabs task */
+.sandbox {
+  border: 2px dashed #888;
+  padding: 1rem;
+  min-height: 140px;
+}
+/* Structure hints:
+   .tabs input[type=radio] { position:absolute; opacity:0; }
+   .tabs input:checked + label { font-weight:600; }
+   Panels hidden by default, shown with sibling selectors.
+*/

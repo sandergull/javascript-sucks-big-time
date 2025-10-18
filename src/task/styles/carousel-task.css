@@ -1,0 +1,10 @@
+/* Starter CSS for Carousel task */
+.sandbox {
+  border: 2px dashed #888;
+  padding: 1rem;
+  min-height: 140px;
+}
+/* scroll-snap hints:
+   .track { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; }
+   .slide { flex:0 0 100%; scroll-snap-align:start; }
+*/

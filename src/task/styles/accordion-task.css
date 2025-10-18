@@ -1,0 +1,13 @@
+/* Starter CSS for Accordion task (students may extend).
+   Keep minimal guidance comments; encourage semantic HTML.
+*/
+.sandbox {
+  border: 2px dashed var(--border-color, #888);
+  padding: 1rem;
+  background: var(--sandbox-bg, #fafafa);
+  min-height: 140px;
+}
+/* Optional hooks:
+   details { margin-bottom:.5rem; }
+   details[open] { background:#fff; outline:1px solid #ccc; }
+*/

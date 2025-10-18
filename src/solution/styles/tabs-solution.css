@@ -1,0 +1,56 @@
+.tabs {
+  --tab-gap: 0.5rem;
+  margin-top: 1rem;
+}
+.tabs .tab-controls {
+  display: flex;
+  gap: var(--tab-gap);
+  flex-wrap: wrap;
+}
+.tabs input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.tabs label {
+  padding: 0.55rem 0.9rem;
+  background: var(--surface);
+  border: 1px solid var(--surface-alt);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 500;
+}
+.tabs label:hover {
+  background: var(--surface-alt);
+}
+.tabs input:checked + label {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.tabs .tab-panels {
+  margin-top: 1rem;
+}
+.tabs [role='tabpanel'] {
+  display: none;
+  padding: 1rem;
+  border: 1px solid var(--surface-alt);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+#tab-1:checked ~ .tab-panels #panel-1,
+#tab-2:checked ~ .tab-panels #panel-2,
+#tab-3:checked ~ .tab-panels #panel-3 {
+  display: block;
+  animation: fade 0.35s ease;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

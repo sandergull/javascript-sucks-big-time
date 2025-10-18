@@ -1,0 +1,10 @@
+/* Starter CSS for Modal task */
+.sandbox {
+  border: 2px dashed #888;
+  padding: 1rem;
+  min-height: 140px;
+}
+/* Overlay / centering idea:
+   .overlay { position:fixed; inset:0; background:rgba(0,0,0,.6); }
+   .modal { position:fixed; inset:50% auto auto 50%; transform:translate(-50%,-50%); }
+*/
