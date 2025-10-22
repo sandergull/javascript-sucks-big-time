@@ -19,9 +19,9 @@ export const CarouselLink = () => (
     <NavLink to="/carousel">Carousel</NavLink>
   </li>
 );
-export const TooltipLink = () => (
+export const RangeLink = () => (
   <li>
-    <NavLink to="/tooltip">Tooltip</NavLink>
+    <NavLink to="/range">Range</NavLink>
   </li>
 );
 export const TasksLink = () => (

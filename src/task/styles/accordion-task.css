@@ -1,13 +1,64 @@
-/* Starter CSS for Accordion task (students may extend).
-   Keep minimal guidance comments; encourage semantic HTML.
-*/
+/* Starter CSS for Accordion task */
 .sandbox {
-  border: 2px dashed var(--border-color, #888);
-  padding: 1rem;
-  background: var(--sandbox-bg, #fafafa);
-  min-height: 140px;
+  border: 2px dashed #888;
+  padding: 2rem;
+  min-height: 200px;
+  background: #1c2025;
+  margin-top: 2rem;
 }
-/* Optional hooks:
-   details { margin-bottom:.5rem; }
-   details[open] { background:#fff; outline:1px solid #ccc; }
-*/
+
+.task-description {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #252a31;
+  border-radius: 8px;
+  border: 1px solid #5b8bf7;
+}
+
+.task-description h3 {
+  margin-top: 0;
+  color: #5b8bf7;
+}
+
+.task-description ul {
+  margin: 0.5rem 0;
+}
+
+.task-description li {
+  margin: 0.25rem 0;
+}
+
+.hint-section {
+  margin-top: 1.5rem;
+  background: #1c2025;
+  border: 1px solid #dd7af4;
+  border-radius: 6px;
+}
+
+.hint-section summary {
+  padding: 0.75rem;
+  cursor: pointer;
+  color: #dd7af4;
+  font-weight: bold;
+  list-style: none;
+}
+
+.hint-section summary::-webkit-details-marker {
+  display: none;
+}
+
+.hint-content {
+  padding: 0 0.75rem 0.75rem;
+  color: #f5f7fa;
+}
+
+.hint-content p {
+  margin: 0.5rem 0;
+}
+
+.hint-content code {
+  background: #252a31;
+  padding: 2px 4px;
+  border-radius: 3px;
+  color: #5b8bf7;
+}

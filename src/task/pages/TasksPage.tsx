@@ -9,51 +9,77 @@ export default function TasksPage() {
         semantisk HTML, attributter og moderne CSS selektorer/pseudo-klasser. Når du er ferdig kan
         du sammenligne med løsningene i komponent-seksjonen.
       </p>
+
+      <div className="task-instructions">
+        <h3>Instruksjoner</h3>
+        <ul>
+          <li>Prøv først å løse oppgaven på egen hånd</li>
+          <li>Bruk Google og MDN docs for å finne løsninger</li>
+          <li>Åpne hint-seksjonen kun hvis du står fast</li>
+          <li>Sammenlign med løsningene når du er ferdig</li>
+        </ul>
+      </div>
+
       <ol className="task-list">
         <li>
           <h3>Oppgave 1: Accordion</h3>
           <p>
-            Lag en accordion med tre seksjoner. Kun én skal være åpen samtidig. Hint:{' '}
-            <code>&lt;details&gt;</code> /<code>&lt;summary&gt;</code> eller radio-gruppe pattern.
+            Lag en accordion med tre seksjoner som kan åpnes/lukkes. Bruk semantisk HTML uten
+            JavaScript.
           </p>
+          <details className="hint-section">
+            <summary>💡 Vis hint</summary>
+            <p>
+              Se på <code>&lt;details&gt;</code> og <code>&lt;summary&gt;</code> elementene.
+            </p>
+          </details>
         </li>
+
         <li>
           <h3>Oppgave 2: Tabs</h3>
-          <p>
-            Tre faner hvor aktivt innhold vises. Hint: Skjulte radio inputs + labels + sibling
-            selektorer.
-          </p>
+          <p>Lag tre faner hvor kun ett panel er synlig om gangen. Bruk ren CSS uten JavaScript.</p>
+          <details className="hint-section">
+            <summary>💡 Vis hint</summary>
+            <p>
+              Bruk skjulte radio inputs + labels + sibling selektorer (<code>~</code>).
+            </p>
+          </details>
         </li>
+
         <li>
           <h3>Oppgave 3: Modal</h3>
-          <p>
-            Åpnes fra lenke/knapp og lukkes fra en annen. Hint: <code>:target</code> + overlay eller{' '}
-            <code>&lt;dialog&gt;</code>.
-          </p>
+          <p>Lag en modal som åpnes fra en lenke og lukkes fra en annen. Ren CSS-løsning.</p>
+          <details className="hint-section">
+            <summary>💡 Vis hint</summary>
+            <p>
+              Utforsk <code>:target</code> pseudo-klassen eller <code>&lt;dialog&gt;</code>{' '}
+              elementet.
+            </p>
+          </details>
         </li>
+
         <li>
           <h3>Oppgave 4: Carousel</h3>
-          <p>
-            Horisontalt galleri med minst tre slides som snapper ved scroll. Hint:{' '}
-            <code>scroll-snap</code>.
-          </p>
+          <p>Lag et horisontalt bildegalleri som "snapper" til hver slide ved scrolling.</p>
+          <details className="hint-section">
+            <summary>💡 Vis hint</summary>
+            <p>
+              Se på CSS <code>scroll-snap</code> egenskaper og flexbox med <code>overflow-x</code>.
+            </p>
+          </details>
         </li>
+
         <li>
-          <h3>Oppgave 5: Tooltip</h3>
-          <p>
-            Tooltip på knapp og lenke ved hover og fokus. Hint: <code>data-tooltip</code> +{' '}
-            <code>::after</code>.
-          </p>
+          <h3>Oppgave 5: Range Input</h3>
+          <p>Lag en range slider med labels under som automatisk tilpasser seg antall options.</p>
+          <details className="hint-section">
+            <summary>💡 Vis hint</summary>
+            <p>
+              Kombiner <code>:has()</code> selector, CSS Grid og <code>&lt;datalist&gt;</code>.
+            </p>
+          </details>
         </li>
       </ol>
-      <section>
-        <h3>Sandbox</h3>
-        <p>
-          Under er et tomt område du kan bruke mens du eksperimenterer. Legg inn markup og koble til
-          egen midlertidig CSS i filene i <code>src/task/styles</code>.
-        </p>
-        <div className="sandbox" aria-label="Sandbox"></div>
-      </section>
     </main>
   );
 }

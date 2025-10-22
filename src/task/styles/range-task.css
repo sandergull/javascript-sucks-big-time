@@ -1,4 +1,4 @@
-/* Starter CSS for Carousel task */
+/* Starter CSS for Range Input task */
 .sandbox {
   border: 2px dashed #888;
   padding: 2rem;
@@ -27,8 +27,9 @@
 }
 
 /* Research keywords to explore:
-   - CSS scroll-snap
-   - CSS flexbox overflow scroll
-   - CSS scroll-snap-type mandatory
-   - CSS scroll-snap-align
+   - CSS :has() selector
+   - HTML datalist range input
+   - CSS Grid repeat() function
+   - CSS custom properties variables
+   - CSS nth-child selector
 */

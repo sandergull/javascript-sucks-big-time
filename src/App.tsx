@@ -1,19 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import './styles/layout.css';
 
-// --- Environment / Mode Handling ------------------------------------------
-// Augment global typing for the Vite env variable.
-declare global {
-  interface ImportMetaEnv {
-    readonly VITE_VIEW_MODE?: 'solution' | 'task';
-  }
-  interface ImportMeta {
-    readonly env: ImportMetaEnv;
-  }
-}
-
-// Normalize mode: only 'task' explicitly selects task view, everything else falls back to solution.
-const MODE: 'solution' | 'task' = import.meta.env.VITE_VIEW_MODE === 'task' ? 'task' : 'solution';
+const MODE = 'solution' as 'solution' | 'task';
 
 // Helper to pick implementation set based on MODE. We keep static imports so tree-shaking works and
 // avoid dynamic import complexity for pages (they're small). Conditional selection happens at render time.
@@ -21,13 +9,13 @@ import SolutionAccordionPage from './solution/pages/AccordionPage';
 import SolutionTabsPage from './solution/pages/TabsPage';
 import SolutionModalPage from './solution/pages/ModalPage';
 import SolutionCarouselPage from './solution/pages/CarouselPage';
-import SolutionTooltipPage from './solution/pages/TooltipPage';
+import SolutionRangePage from './solution/pages/RangePage';
 
 import TaskAccordionPage from './task/pages/AccordionPage';
 import TaskTabsPage from './task/pages/TabsPage';
 import TaskModalPage from './task/pages/ModalPage';
 import TaskCarouselPage from './task/pages/CarouselPage';
-import TaskTooltipPage from './task/pages/TooltipPage';
+import TaskRangePage from './task/pages/RangePage';
 
 import TasksPage from './task/pages/TasksPage';
 
@@ -48,7 +36,7 @@ const Header = () => (
         <NavLinks.TabsLink />
         <NavLinks.ModalLink />
         <NavLinks.CarouselLink />
-        <NavLinks.TooltipLink />
+        <NavLinks.RangeLink />
         <NavLinks.TasksLink />
       </ul>
     </nav>
@@ -86,8 +74,8 @@ export default function App() {
           element={MODE === 'task' ? <TaskCarouselPage /> : <SolutionCarouselPage />}
         />
         <Route
-          path="/tooltip"
-          element={MODE === 'task' ? <TaskTooltipPage /> : <SolutionTooltipPage />}
+          path="/range"
+          element={MODE === 'task' ? <TaskRangePage /> : <SolutionRangePage />}
         />
         <Route path="/tasks" element={<TasksPage />} />
       </Routes>

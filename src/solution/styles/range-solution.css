@@ -1,0 +1,66 @@
+form:has(input[type='range'] + datalist option:nth-child(1)) {
+  --opts: 1;
+}
+
+form:has(input[type='range'] + datalist option:nth-child(2)) {
+  --opts: 2;
+}
+
+form:has(input[type='range'] + datalist option:nth-child(3)) {
+  --opts: 3;
+}
+
+form:has(input[type='range'] + datalist option:nth-child(4)) {
+  --opts: 4;
+}
+
+form:has(input[type='range'] + datalist option:nth-child(5)) {
+  --opts: 5;
+}
+
+form:has(input[type='range'] + datalist option:nth-child(6)) {
+  --opts: 6;
+}
+
+form:has(input[type='range'] + datalist option:nth-child(7)) {
+  --opts: 7;
+}
+
+form:has(input[type='range'] + datalist option:nth-child(8)) {
+  --opts: 8;
+}
+
+form:has(input[type='range'] + datalist option:nth-child(9)) {
+  --opts: 9;
+}
+
+form:has(input[type='range'] + datalist option:nth-child(10)) {
+  --opts: 10;
+}
+
+form input[type='range'] {
+  width: calc(100% - (100% / var(--opts)));
+  margin-bottom: 20px;
+}
+
+form input[type='range'] + datalist {
+  display: grid;
+  grid-template-columns: repeat(var(--opts), 1fr);
+  gap: 5px;
+  margin-top: 10px;
+  width: calc(100% - (100% / var(--opts)));
+}
+
+form input[type='range'] + datalist option {
+  font-size: 12px;
+  color: #f5f7fa;
+  text-align: center;
+  padding: 2px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #f5f7fa;
+}

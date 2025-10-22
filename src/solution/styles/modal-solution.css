@@ -1,41 +1,138 @@
+.modal-demos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.demo-section {
+  padding: 20px;
+  background: #252a31;
+  border-radius: 8px;
+  border: 1px solid #5b8bf7;
+}
+
+.demo-section h3 {
+  margin-top: 0;
+  color: #5b8bf7;
+}
+
+/* Target Modal Styles */
 .modal {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
   display: none;
-  place-items: center;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
 }
-:target.modal {
-  display: grid;
+
+.modal:target {
+  display: block;
 }
+
 .modal-content {
-  width: min(500px, 90vw);
-  background: var(--surface);
-  border: 1px solid var(--surface-alt);
-  border-radius: var(--radius-lg);
-  padding: 1.25rem 1.5rem 1.5rem;
-  box-shadow: var(--shadow-md);
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  max-width: 90%;
+  background: #1c2025;
+  border: 2px solid #5b8bf7;
+  border-radius: 12px;
+  padding: 30px;
+  color: #f5f7fa;
 }
+
+/* Dialog Modal Styles - Using [open] + :target */
+.dialog-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Show dialog when it has [open] AND is targeted */
+.dialog-modal[open]:target {
+  display: block;
+}
+
+.dialog-modal .dialog-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  max-width: 90%;
+  background: #1c2025;
+  border: 2px solid #dd7af4;
+  border-radius: 12px;
+  padding: 30px;
+  color: #f5f7fa;
+}
+
+.dialog-content h3 {
+  margin-top: 0;
+  color: #dd7af4;
+}
+
+/* Button Styles */
 .open-modal-btn {
-  padding: 0.6rem 1rem;
-  background: var(--accent);
-  color: #fff;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #5b8bf7, #dd7af4);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
 }
+
 .open-modal-btn:hover {
-  background: var(--accent-alt);
+  background: linear-gradient(90deg, #dd7af4, #5b8bf7);
 }
+
 .close-modal {
   position: absolute;
-  top: 0.5rem;
-  right: 0.75rem;
-  font-size: 1.3rem;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #f5f7fa;
   text-decoration: none;
-  color: var(--text);
 }
+
 .close-modal:hover {
-  color: var(--danger);
+  color: #e5484d;
+}
+
+.close-dialog-btn {
+  padding: 8px 16px;
+  background: #e5484d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.close-dialog-btn:hover {
+  background: #d73c41;
+}
+
+@media (max-width: 600px) {
+  .modal-demos {
+    grid-template-columns: 1fr;
+  }
 }
