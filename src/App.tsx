@@ -1,10 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import './styles/layout.css';
 
-const MODE = 'task' as 'solution' | 'task';
+const MODE = 'solution' as 'solution' | 'task';
 
-// Helper to pick implementation set based on MODE. We keep static imports so tree-shaking works and
-// avoid dynamic import complexity for pages (they're small). Conditional selection happens at render time.
 import SolutionAccordionPage from './solution/pages/AccordionPage';
 import SolutionTabsPage from './solution/pages/TabsPage';
 import SolutionModalPage from './solution/pages/ModalPage';
