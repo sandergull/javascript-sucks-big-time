@@ -1,6 +1,8 @@
-# HTML & CSS Komponentforklaring (Norsk)
+https://github.com/sandergull/javascript-sucks-big-time
 
-Denne filen viser hvordan du kan lage interaktive komponenter _uten JavaScript_, kun med HTML og CSS. Alle komponentene fungerer i moderne nettlesere.
+clone
+npm install
+npm run dev
 
 ## Oversikt
 
