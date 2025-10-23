@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import './styles/layout.css';
 
-const MODE = 'task' as 'solution' | 'task';
+const MODE = 'solution' as 'solution' | 'task';
 
 import SolutionAccordionPage from './solution/pages/AccordionPage';
 import SolutionTabsPage from './solution/pages/TabsPage';

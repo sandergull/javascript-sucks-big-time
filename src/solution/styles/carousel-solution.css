@@ -9,19 +9,19 @@
   padding-bottom: 1rem;
 }
 .carousel .track::-webkit-scrollbar {
-  height: 10px;
+  background: #252a31;
 }
 .carousel .track::-webkit-scrollbar-thumb {
-  background: var(--surface-alt);
+  background: #252a31;
   border-radius: 10px;
 }
 .carousel .slide {
   flex: 0 0 80%;
   scroll-snap-align: center;
-  background: var(--surface);
-  border: 1px solid var(--surface-alt);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
+  background: #1c2025;
+  border: 1px solid #252a31;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
 .carousel img {
@@ -33,5 +33,5 @@
 .carousel figcaption {
   padding: 0.5rem 0.75rem 0.75rem;
   font-size: 0.9rem;
-  color: var(--text-dim);
+  color: #c2c8d1;
 }
