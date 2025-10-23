@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import './styles/layout.css';
 
-const MODE = 'solution' as 'solution' | 'task';
+const MODE = 'task' as 'solution' | 'task';
 
 // Helper to pick implementation set based on MODE. We keep static imports so tree-shaking works and
 // avoid dynamic import complexity for pages (they're small). Conditional selection happens at render time.
@@ -60,23 +60,25 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/accordion"
-          element={MODE === 'task' ? <TaskAccordionPage /> : <SolutionAccordionPage />}
-        />
-        <Route path="/tabs" element={MODE === 'task' ? <TaskTabsPage /> : <SolutionTabsPage />} />
-        <Route
-          path="/modal"
-          element={MODE === 'task' ? <TaskModalPage /> : <SolutionModalPage />}
-        />
-        <Route
-          path="/carousel"
-          element={MODE === 'task' ? <TaskCarouselPage /> : <SolutionCarouselPage />}
-        />
-        <Route
-          path="/range"
-          element={MODE === 'task' ? <TaskRangePage /> : <SolutionRangePage />}
-        />
+        {MODE === 'solution' ? (
+          // Solution mode - show solution pages
+          <>
+            <Route path="/accordion" element={<SolutionAccordionPage />} />
+            <Route path="/tabs" element={<SolutionTabsPage />} />
+            <Route path="/modal" element={<SolutionModalPage />} />
+            <Route path="/carousel" element={<SolutionCarouselPage />} />
+            <Route path="/range" element={<SolutionRangePage />} />
+          </>
+        ) : (
+          // Task mode - show task pages only
+          <>
+            <Route path="/accordion" element={<TaskAccordionPage />} />
+            <Route path="/tabs" element={<TaskTabsPage />} />
+            <Route path="/modal" element={<TaskModalPage />} />
+            <Route path="/carousel" element={<TaskCarouselPage />} />
+            <Route path="/range" element={<TaskRangePage />} />
+          </>
+        )}
         <Route path="/tasks" element={<TasksPage />} />
       </Routes>
     </div>
