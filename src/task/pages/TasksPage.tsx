@@ -14,9 +14,7 @@ export default function TasksPage() {
         <h3>Instruksjoner</h3>
         <ul>
           <li>Prøv først å løse oppgaven på egen hånd</li>
-          <li>Bruk Google og MDN docs for å finne løsninger</li>
           <li>Åpne hint-seksjonen kun hvis du står fast</li>
-          <li>Sammenlign med løsningene når du er ferdig</li>
         </ul>
       </div>
 
