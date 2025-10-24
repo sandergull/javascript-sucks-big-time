@@ -4,6 +4,10 @@
   margin-bottom: 15px;
   background: linear-gradient(135deg, #1c2025, #252a31);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .accordion summary {
@@ -14,6 +18,11 @@
   color: white;
   list-style: none;
   border-radius: 11px;
+  position: relative;
+  transition:
+    background 0.4s ease,
+    border-radius 0.4s ease,
+    color 0.3s ease;
 }
 
 .accordion details[open] summary {
@@ -21,9 +30,33 @@
   border-radius: 11px 11px 0 0;
 }
 
-.accordion .panel {
+/* Panel animation */
+.accordion details .panel {
+  padding: 0 20px 0; /* initial collapsed padding for animation */
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    max-height 0.4s ease,
+    padding 0.35s ease;
+}
+.accordion details[open] .panel {
   padding: 20px;
+  max-height: 500px; /* large enough to accommodate content */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.accordion .panel {
   background: #1c2025;
   color: #f5f7fa;
   border-radius: 0 0 11px 11px;
+}
+
+/* Optional subtle glow on open */
+.accordion details[open] {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  border-color: #dd7af4;
 }
